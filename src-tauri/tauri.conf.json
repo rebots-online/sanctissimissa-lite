@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SanctissiMissa",
+  "version": "1.66.30030",
+  "identifier": "mba.robin.sanctissimissa",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build:vite",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist-web"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "SanctissiMissa — Traditional Latin Mass & Divine Office",
+        "width": 1320,
+        "height": 860,
+        "minWidth": 800,
+        "minHeight": 600,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' ipc: http://ipc.localhost https:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "deb",
+      "appimage",
+      "nsis"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "copyright": "Copyright (C) 2026 Robin L. M. Cheung, MBA. All rights reserved.",
+    "category": "Education",
+    "shortDescription": "The Traditional Latin Mass and Divine Office as a navigable subway map",
+    "longDescription": "SanctissiMissa presents the Traditional Latin Mass (1962 Missal) and the Divine Office of the Extraordinary Form as a subway-style map: bilingual exegetical reader, annotations, corpus concordance, vector similarity, cross-references, and a perpetual liturgical calendar computed by Butcher's Easter algorithm.",
+    "linux": {
+      "deb": {
+        "depends": [],
+        "section": "Education",
+        "priority": "optional"
+      }
+    },
+    "windows": {
+      "digestAlgorithm": "sha256",
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      },
+      "nsis": {
+        "installMode": "perMachine",
+        "languages": [
+          "English"
+        ],
+        "displayLanguageSelector": false
+      }
+    },
+    "android": {
+      "versionCode": 100066,
+      "autoIncrementVersionCode": false
+    }
+  }
+}
